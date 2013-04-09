@@ -4,37 +4,37 @@ require 'friends'
 class Wedding < ActiveEngagement::Base
 
   def invite
+    puts <<-INVITE
+        Mr & Mrs S Burke invite you to
+        the Wedding of their daughter
 
-				    puts 'Mr & Mrs S Burke invite you to'
-				    puts 'the Wedding of their daughter'
-				         puts 'Heather Maria Burke'
-				              puts 'to'
-				         puts 'Dominic Thomas Hodgson' 
-				    puts 'On the xxth of October 20xx'
-				    puts 'At the xxxx xxxx, Leeds'
+            Heather Maria Burke
+                  to
+            Dominic Thomas Hodgson
 
-		puts '----------------------------------------------------------'				           
-		puts '                               _      Heather and Dom		'
-		puts '         ___            {@}  _|=|_                    	'
-		puts '        /___\          /(")\  (")							'
-		puts '     .---'-'---.      /((~))\/<x>\        _   .-.			'
-		puts '    /___________\     ~~/@\~~\|_|/       <v> ((_))	 	'
-		puts '     | A /^\ A |       /   \  |||       ((_)) '-' 		'
-		puts '     |   |"|   |      /~@~@~\ |||        '-' 				'
-		puts ' ____|___|_|___|_____/_______\|||___October 25th 2013___ 	'
+        On the xxth of October 20xx
+        At the xxxx xxxx, Leeds
 
-				puts 'Ceremony Commences at 12:00'
-					puts 'Followed by a'
-				puts 'Wedding Breakfast & Evening Reception'		
+----------------------------------------------------------
+                               _      Heather and Dom
+         ___            {@}  _|=|_
+        /___\          /(")\  (")
+     .---'-'---.      /((~))\/<x>\        _   .-.
+    /___________\     ~~/@\~~\|_|/       <v> ((_))
+     | A /^\ A |       /   \  |||       ((_)) '-'
+     |   |"|   |      /~@~@~\ |||        '-'
+ ____|___|_|___|_____/_______\|||___October 25th 2013___
 
+        Ceremony Commences at 12:00
+          Followed by a
+        Wedding Breakfast & Evening Reception
+    INVITE
 
-		if self.internet_access?
-				redirect_to 'http://heatheranddom.com/rsvp'
-			else
-				rsvp_to 'Mr + Mrs Burke, Address Here'
-		end
-
-
-	end
+    if self.internet_access?
+        redirect_to 'http://heatheranddom.com/rsvp'
+      else
+        rsvp_to 'Mr + Mrs Burke, Address Here'
+    end
+  end
 
 end
