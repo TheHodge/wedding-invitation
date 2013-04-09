@@ -6,7 +6,7 @@ class Wedding < ActiveEngagement::Base
   def invite
 
 				    puts 'Mr & Mrs S Burke invite you to'
-				    puts 'the Wedding of their Daughter'
+				    puts 'the Wedding of their daughter'
 				         puts 'Heather Maria Burke'
 				              puts 'to'
 				         puts 'Dominic Thomas Hodgson' 
@@ -29,9 +29,9 @@ class Wedding < ActiveEngagement::Base
 
 
 		if self.internet_access?
-				redirect_to 'http://heatheranddom.com/rspv'
+				redirect_to 'http://heatheranddom.com/rsvp'
 			else
-				rspv_to 'Mr + Mrs Burke, Address Here'
+				rsvp_to 'Mr + Mrs Burke, Address Here'
 		end
 
 
