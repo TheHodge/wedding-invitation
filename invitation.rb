@@ -6,7 +6,7 @@ class Wedding < ActiveEngagement::Base
   def invite
     puts <<-INVITE
         Mr & Mrs S Burke invite you to
-        the Wedding of their Daughter
+        the Wedding of their daughter
 
             Heather Maria Burke
                   to
@@ -31,9 +31,9 @@ class Wedding < ActiveEngagement::Base
     INVITE
 
     if self.internet_access?
-        redirect_to 'http://heatheranddom.com/rspv'
+        redirect_to 'http://heatheranddom.com/rsvp'
       else
-        rspv_to 'Mr + Mrs Burke, Address Here'
+        rsvp_to 'Mr + Mrs Burke, Address Here'
     end
   end
 
