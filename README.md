@@ -7,13 +7,13 @@ I've decided to ask for help with my wedding invitation from github, as part of 
 
 Is what it should look like.
 
-FAQ
+#FAQ
 
-## Can I use this to invite myself to the wedding
+### Can I use this to invite myself to the wedding
 
 No.
 
-## Can I convert this to [insert language here]
+### Can I convert this to [insert language here]
 
 I think having the same template done in different languages would be pretty cool. If you want a .php invite, start an invitation.php and make it pretty!
 
