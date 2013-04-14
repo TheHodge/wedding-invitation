@@ -42,7 +42,7 @@ class Wedding < ActiveEngagement::Base
     Ceremony.start
     heather.kissed_by(dom)
     Ceremony.sign_register(heather, dom)
-    heather.surname! = "Hodgson"
+    heather.change! surname: "Hodgson"
     throw :bouquet
     Ceremony.end
   rescue AnyLawfulImpediment
