@@ -31,26 +31,22 @@ class Wedding < ActiveEngagement::Base
 				puts 'Wedding Breakfast & Evening Reception'		
 
 
-		if self.internet_access?
-				redirect_to 'http://heatheranddom.com/rsvp'
-		else
-				rsvp_to 'Mr + Mrs Burke, Address Here'
-		end
-
-
-	end
-	
-	def ceremony
-		begin
-			Ceremony.start
-			heather.kissed_by(dom)
-			Ceremony.sign_register(heather, dom)
-			heather.surname! = "Hodgson"
-			throw :bouquet
-			Ceremony.end
-		rescue AnyLawfulImpediment
-			# This should never happen!
-		end
-	end
-	
+    if self.internet_access?
+        redirect_to 'http://heatheranddom.com/rsvp'
+    else
+        rsvp_to 'Mr + Mrs Burke, Address Here'
+    end
+  end
+  
+  def ceremony
+    Ceremony.start
+    heather.kissed_by(dom)
+    Ceremony.sign_register(heather, dom)
+    heather.change! surname: "Hodgson"
+    throw :bouquet
+    Ceremony.end
+  rescue AnyLawfulImpediment
+    # This should never happen!
+  end
+  
 end
