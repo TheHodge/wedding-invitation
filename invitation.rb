@@ -1,6 +1,9 @@
 require 'family'
 require 'friends'
 
+heather = Bride.new
+dom     = Groom.new
+
 class Wedding < ActiveEngagement::Base
 
   def invite
@@ -37,4 +40,16 @@ class Wedding < ActiveEngagement::Base
     end
   end
 
+	def ceremony
+		begin
+			Ceremony.start
+			heather.kissed_by(dom)
+			Ceremony.sign_register(heather, dom)
+			heather.surname! = "Hodgson"
+			throw :bouquet
+			Ceremony.end
+		rescue AnyLawfulImpediment
+			# This should never happen!
+		end
+	end
 end
