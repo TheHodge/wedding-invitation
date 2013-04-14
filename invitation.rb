@@ -39,16 +39,14 @@ class Wedding < ActiveEngagement::Base
   end
   
   def ceremony
-    begin
-      Ceremony.start
-      heather.kissed_by(dom)
-      Ceremony.sign_register(heather, dom)
-      heather.surname! = "Hodgson"
-      throw :bouquet
-      Ceremony.end
-    rescue AnyLawfulImpediment
-      # This should never happen!
-    end
+    Ceremony.start
+    heather.kissed_by(dom)
+    Ceremony.sign_register(heather, dom)
+    heather.surname! = "Hodgson"
+    throw :bouquet
+    Ceremony.end
+  rescue AnyLawfulImpediment
+    # This should never happen!
   end
   
 end
